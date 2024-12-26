@@ -13,6 +13,12 @@ app.get("/", (req, resp) => {
   resp.status(200).json({ message: "Hello World" });
 });
 
+app.get("/:user", (req, resp) => {
+  resp.status(200).json({
+    user: req.query.user,
+  });
+});
+
 app.listen(PORT, () => {
   console.log("first server is running on port 8080");
 });
